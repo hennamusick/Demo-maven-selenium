@@ -10,12 +10,16 @@ public class GoogleSearchTest {
 
         WebDriver driver = new ChromeDriver();
         driver.navigate().to("http://google.com");
-        String appTitle = driver.getTitle();
-
-        System.out.println("App Title : " + appTitle);
-
         try {
-            Thread.sleep(5000);
+            String appTitle = driver.getTitle();
+
+            System.out.println("App Title : " + appTitle);
+
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
